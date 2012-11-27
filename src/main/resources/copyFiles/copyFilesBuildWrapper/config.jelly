@@ -1,0 +1,143 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+  <!--
+    This jelly script is used for per-project configuration.
+
+    See global.jelly for a general discussion about jelly script.
+  -->
+    <!--   <f:entry>    -->
+
+ <table width="100%">
+     <col width="15%"/>
+     <col width="20%"/>
+     <col width="20%"/>
+     <col width="15%"/>
+     <col width="20%"/>
+     <col width="10%"/>
+     <tr>
+         <td>From Master:</td>
+         <td>Source file directory</td>
+         <td><f:textbox field="masterFileDir"/></td>
+         <td align="center">File name</td>
+         <td><f:textbox field="masterFileName"/></td>
+         <td/>
+     </tr>
+ </table>
+
+ <table width="100%">
+     <col width="15%"/>
+     <col width="20%"/>
+     <col width="35%"/>
+     <col width="30%"/>
+     <tr>
+         <td/>
+         <td>Paths are relative to</td>
+         <td>
+             <select name="masterRelativeTo" >
+                 <f:option selected="${instance.masterRelativeTo == 'UserContent'}" value="UserContent">$JENKINS_HOME/userContent</f:option>
+                 <f:option selected="${instance.masterRelativeTo == 'Home'}" value="Home">$JENKINS_HOME</f:option>
+                 <f:option selected="${instance.masterRelativeTo == 'MasterWorkspace'}" value="MasterWorkspace">This job's workspace on the master</f:option>
+                 <f:option selected="${instance.masterRelativeTo == 'MasterAnyDir'}" value="MasterAnyDir">Any directory on the master</f:option>
+             </select>
+         </td>
+         <td/>
+     </tr>
+ </table>
+
+ <table width="100%">
+     <col width="15%"/>
+     <col width="20%"/>
+     <col width="20%"/>
+     <col width="15%"/>
+     <col width="20%"/>
+     <col width="10%"/>
+     <tr>
+         <td>To Slave:</td>
+         <td>Target file directory</td>
+         <td><f:textbox field="slaveFileDir"/></td>
+         <td/>
+         <td/>
+         <td/>
+     </tr>
+ </table>
+
+ <table width="100%">
+     <col width="15%"/>
+     <col width="20%"/>
+     <col width="35%"/>
+     <col width="30%"/>
+     <tr>
+         <td/>
+         <td>Paths are relative to</td>
+         <td>
+             <select name="slaveRelativeTo">
+                 <f:option selected="${instance.slaveRelativeTo == 'SlaveWorkspace'}" value="SlaveWorkspace" >This job's workspace on the slave</f:option>
+                 <f:option selected="${instance.slaveRelativeTo == 'SlaveAnyDir'}" value="SlaveAnyDir" >Any directory on the slave</f:option>
+             </select>
+         </td>
+         <td/>
+     </tr>
+ </table>
+
+<!--  </f:entry>     -->
+
+
+
+ <!--
+ <f:entry>
+
+        <table width="100%">
+            <col width="20%"/>
+            <col width="20%"/>
+            <col width="20%"/>
+            <col width="20%"/>
+            <col width="20%"/>
+            <tr>
+                <td>From Master:</td>
+                <td>Source file directory</td>
+                <td><f:textbox field="masterFileDir"/></td>
+                <td align="right" >File name</td>
+                <td><f:textbox field="masterFileName"/></td>
+            </tr>
+
+            <tr>
+                <td/>
+                <td>Paths are relative to</td>
+                <td>
+                    <select name="masterRelativeTo" >
+                        <option selected="${instance.masterRelativeTo == 'UserContent'}" value="UserContent">$JENKINS_HOME/userContent</option>
+                        <option selected="${instance.masterRelativeTo == 'Home'}" value="Home">$JENKINS_HOME</option>
+                        <option selected="${instance.masterRelativeTo == 'MasterWorkspace'}" value="MasterWorkspace">This job's workspace on the master</option>
+                        <option selected="${instance.masterRelativeTo == 'MasterAnyDir'}" value="MasterAnyDir">Any directory on the master</option>
+                    </select>
+                </td>
+                <td/>
+                <td/>
+            </tr>
+
+            <tr>
+                <td>To Slave:</td>
+                <td>Target file directory</td>
+                <td><f:textbox field="slaveFileDir"/></td>
+                <td/>
+                <td/>
+            </tr>
+
+            <tr>
+                <td/>
+                <td>Paths are relative to</td>
+                <td>
+                    <select name="slaveRelativeTo">
+                        <f:option selected="${slaveRelativeTo == 'SlaveWorkspace'}" value="SlaveWorkspace" >This job's workspace on the slave</f:option>
+                        <f:option selected="true" value="SlaveAnyDir" >Any directory on the slave</f:option>
+                    </select>
+                </td>
+                <td/>
+                <td/>
+            </tr>
+
+        </table>
+
+    </f:entry>
+   -->
+
+</j:jelly>
